@@ -1,0 +1,51 @@
+﻿@page
+@model VetCare.Pages.Vaccinuri.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Vaccinare</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Vaccinare.Denumire" class="control-label">Nume Vaccin</label>
+                <input asp-for="Vaccinare.Denumire" class="form-control" />
+                <span asp-validation-for="Vaccinare.Denumire" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Vaccinare.DataVaccin" class="control-label">Data</label>
+                <input asp-for="Vaccinare.DataVaccin" class="form-control" />
+                <span asp-validation-for="Vaccinare.DataVaccin" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Vaccinare.PetId" class="control-label">Alege Animalul</label>
+                <select asp-for="Vaccinare.PetId" class="form-control" asp-items="ViewBag.PetId">
+                    <option value="">-- Selecteaza --</option>
+                </select>
+            </div>
+
+            <div class="form-group mt-3">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

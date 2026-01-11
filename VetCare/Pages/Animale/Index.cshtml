@@ -1,0 +1,66 @@
+﻿@page
+@model VetCare.Pages.Animale.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Animal[0].Nume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Animal[0].Specie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Animal[0].Rasa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Animal[0].Varsta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Animal[0].Gen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Animal[0].Proprietar)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Animal) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Specie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rasa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Varsta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gen)
+            </td>
+            <td>
+                @item.Proprietar.Nume @item.Proprietar.Prenume
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PetId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.PetId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PetId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

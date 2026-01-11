@@ -1,0 +1,49 @@
+﻿@page
+@model VetCare.Pages.Vaccinuri.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index Vaccinuri</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Vaccinare[0].Denumire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vaccinare[0].DataVaccin)
+            </th>
+            <th>
+                Animal
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Vaccinare)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Denumire)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataVaccin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Animal.Nume)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.VaccinId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.VaccinId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.VaccinId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

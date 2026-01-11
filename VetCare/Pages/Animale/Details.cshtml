@@ -1,0 +1,55 @@
+﻿@page
+@model VetCare.Pages.Animale.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Animal</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Animal.Nume)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Animal.Nume)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Animal.Specie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Animal.Specie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Animal.Rasa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Animal.Rasa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Animal.Varsta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Animal.Varsta)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Animal.Gen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Animal.Gen)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Animal.Proprietar)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Animal.Proprietar.Email)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Animal.PetId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

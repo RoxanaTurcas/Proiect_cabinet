@@ -1,0 +1,56 @@
+﻿@page
+@model VetCare.Pages.Reviews.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Review</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Review.Rating)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Review.Rating)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Review.Comentariu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Review.Comentariu)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Review.Data)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Review.Data)
+        </dd>
+
+        <dt class="col-sm-2">
+            Client
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Review.Client.Email)
+        </dd>
+
+        <dt class="col-sm-2">
+            Medic Veterinar
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Review.Medic.Email)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Review.ReviewId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
