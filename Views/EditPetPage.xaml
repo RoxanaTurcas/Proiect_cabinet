@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proiect.Views.EditPetPage"
+             Title="Editare Animal ✏️"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="20">
+
+            <Label Text="Modifică detaliile:" 
+                   FontSize="20" 
+                   FontAttributes="Bold" 
+                   TextColor="#512BD4"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,10"/>
+
+            <VerticalStackLayout>
+                <Label Text="Nume:" TextColor="Gray" FontSize="12" Margin="5,0,0,0"/>
+                <Entry x:Name="TxtNume" Placeholder="Introdu numele" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Label Text="Specie:" TextColor="Gray" FontSize="12" Margin="5,0,0,0"/>
+                <Entry x:Name="TxtSpecie" Placeholder="Ex: Câine, Pisică..." />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Label Text="Rasă:" TextColor="Gray" FontSize="12" Margin="5,0,0,0"/>
+                <Entry x:Name="TxtRasa" Placeholder="Ex: Labrador, Birmaneză..." />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Label Text="Gen:" TextColor="Gray" FontSize="12" Margin="5,0,0,0"/>
+                <Entry x:Name="TxtGen" Placeholder="Masculin / Feminin" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Label Text="Vârstă (ani):" TextColor="Gray" FontSize="12" Margin="5,0,0,0"/>
+                <Entry x:Name="TxtVarsta" 
+                       Placeholder="Ex: 5" 
+                       Keyboard="Numeric" />
+            </VerticalStackLayout>
+
+            <Button Text="💾 Salvează Modificările" 
+                    Clicked="OnSaveClicked" 
+                    BackgroundColor="#512BD4" 
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    HeightRequest="50"
+                    CornerRadius="10"
+                    Margin="0,20,0,0"/>
+
+            <Button Text="Anulează" 
+                    Clicked="OnCancelClicked" 
+                    BackgroundColor="Transparent" 
+                    TextColor="Gray"
+                    HeightRequest="40"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

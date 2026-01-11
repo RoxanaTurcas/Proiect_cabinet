@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proiect.Views.RegisterPage"
+             Title="Înregistrare Cont">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="30">
+
+            <Label Text="Creează un cont nou"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Padding="0,0,0,20"/>
+
+            <Entry x:Name="NumeEntry" Placeholder="Nume" />
+            <Entry x:Name="PrenumeEntry" Placeholder="Prenume" />
+
+            <Entry x:Name="EmailEntry" 
+                   Placeholder="Email" 
+                   Keyboard="Email" />
+
+            <Entry x:Name="TelefonEntry" 
+                   Placeholder="Telefon" 
+                   Keyboard="Telephone" />
+
+            <Entry x:Name="PasswordEntry" 
+                   Placeholder="Parola" 
+                   IsPassword="True" />
+
+            <Label Text="Selectează Rolul:" FontSize="14" TextColor="Gray"/>
+            <Picker x:Name="RolPicker" Title="Alege rolul">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Client</x:String>
+                        <x:String>Medic</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button Text="Salvează Contul"
+                    Clicked="OnSaveClicked"
+                    BackgroundColor="#512BD4"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Margin="0,20,0,0"/>
+
+            <Button Text="Anulează"
+                    Clicked="OnCancelClicked"
+                    BackgroundColor="Transparent"
+                    TextColor="Red" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

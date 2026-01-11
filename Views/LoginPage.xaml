@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proiect.Views.LoginPage"
+             Title="Autentificare">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="30" VerticalOptions="Center">
+
+            <Image Source="vetcare.png" 
+                   HeightRequest="150" 
+                   HorizontalOptions="Center" />
+
+            <Label Text="VetCare"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Entry x:Name="EmailEntry"
+                   Placeholder="Introdu adresa de email"
+                   Keyboard="Email" 
+                   IsTextPredictionEnabled="False"/>
+
+            <Entry x:Name="PasswordEntry"
+                   Placeholder="Introdu parola"
+                   IsPassword="True" />
+
+            <Button Text="Intră în cont"
+                    Clicked="OnLoginClicked"
+                    BackgroundColor="#512BD4"
+                    TextColor="White"
+                    CornerRadius="10" />
+
+            <Button Text="Nu ai cont? Înregistrează-te"
+                    Clicked="OnRegisterClicked"
+                    BackgroundColor="Transparent"
+                    TextColor="Gray" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

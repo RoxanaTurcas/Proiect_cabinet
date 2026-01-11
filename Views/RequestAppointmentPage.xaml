@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proiect.Views.RequestAppointmentPage"
+             Title="Programare Nouă">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="20">
+
+            <Label Text="Solicită Programare" 
+                   FontSize="22" FontAttributes="Bold" 
+                   HorizontalOptions="Center" Margin="0,0,0,10"/>
+
+            <Label Text="Pentru cine este programarea?" TextColor="Gray"/>
+            <Picker x:Name="PetPicker" Title="Alege Animalul"
+                    ItemDisplayBinding="{Binding Nume}" />
+            <Label Text="La ce medic?" TextColor="Gray"/>
+            <Picker x:Name="VetPicker" Title="Alege Medicul"
+                    ItemDisplayBinding="{Binding Nume}" />
+
+            <Label Text="Data și Ora dorită:" TextColor="Gray"/>
+            <HorizontalStackLayout Spacing="10">
+                <DatePicker x:Name="AppDatePicker" />
+                <TimePicker x:Name="AppTimePicker" Format="HH:mm" />
+            </HorizontalStackLayout>
+
+            <Label Text="Motivul vizitei:" TextColor="Gray"/>
+            <Picker x:Name="ScopPicker" Title="Selectează motivul">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Consult General</x:String>
+                        <x:String>Vaccinare</x:String>
+                        <x:String>Deparazitare</x:String>
+                        <x:String>Urgență</x:String>
+                        <x:String>Chirurgie</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button Text="Trimite Solicitarea"
+                    Clicked="OnSaveClicked"
+                    BackgroundColor="#512BD4"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Margin="0,20,0,0"/>
+
+            <Button Text="Anulează"
+                    Clicked="OnCancelClicked"
+                    BackgroundColor="Transparent"
+                    TextColor="Red" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:String x:Key="Dummy">A</x:String>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+</ContentPage>
